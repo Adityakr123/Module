@@ -29,7 +29,7 @@ if(isset($_POST["username"])){
         }
         $passback = password_verify($password, $safePassword);
         if ($passback) {
-          include 'logincopy.html';
+          include 'logincopy.php';
             
         } 
         else {

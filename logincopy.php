@@ -36,7 +36,7 @@
                     
             <div class="input1">
                 <div style="align-items: center;">
-                   <a href="seeupload.html" > <button class="submit topinput" style="text-decoration: none;"  >SEE UPLOADS</button></a>
+                   <a href="seeupload.php" > <button class="submit topinput" style="text-decoration: none;"  >SEE UPLOADS</button></a>
                    <a href="upload.php"> <button  class="submit" style="text-decoration: none;" >Upload</button></a>
     
                 </div>
@@ -56,3 +56,27 @@
     
 </body>
 </html>
+<?php
+ $servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbname = "module";
+ // echo"Username";
+// Create connection
+ $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+ if ($conn->connect_error) {
+     die("Connection failed: " . $conn->connect_error);
+     
+ }
+//  session_start();
+ $Username=$_SESSION["id"];
+ try{
+   $conn->query("CREATE TABLE $Username(id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,name varchar(255),mime varchar(255),data longblob)AUTO_INCREMENT=1000000");
+   }
+finally{
+
+}
+
+
+?>

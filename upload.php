@@ -12,24 +12,32 @@
 
 <?php
 
-$dbh =new PDO("mysql: host=localhost; dbname=module", "root", "");
+
 
 if(isset($_POST['btn'])){
 
 $name= $_FILES['myfile']['name'];
 
 $type = $_FILES['myfile']['type'];
+session_start();
+$Username=$_SESSION["id"];
 
 $data = file_get_contents($_FILES['myfile']['tmp_name']);
-$stmt = $dbh->prepare ("insert into myblob values('',?,?,?)");
+$conn = mysqli_connect("localhost", "root", "", "module");
+$imgData =addslashes(file_get_contents($_FILES['myfile']['tmp_name']));
+// $imageProperties = getimageSize($_FILES['myfile']['tmp_name']);
+// $name= $_FILES['myfile']['name'];
+$sql = "INSERT INTO $Username(name,mime,data)VALUES('$name','$type','$imgData')";
+$current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
+// $stmt = $dbh->prepare ("insert into myblob values('',?,?,?)");
 
-$stmt->bindParam (1, $name);
+// $stmt->bindParam (1, $name);
 
-$stmt->bindParam (2,$type);
+// $stmt->bindParam (2,$type);
 
-$stmt->bindParam (3, $data);
+// $stmt->bindParam (3, $data);
 
-$stmt->execute();
+// $stmt->execute();
 
 }
 
@@ -45,19 +53,7 @@ $stmt->execute();
 
 <ol>
 
-<?php
 
-$stat = $dbh->prepare ("select * from myblob");
-
-$stat->execute();
-
-while ($row = $stat->fetch()){
-
-echo "<li><a target='_blank '[href='view.php?id=".$row['id'].">".$row['name']."</a></li>";
-
-}
-
-?>
 
 </ol>
 
