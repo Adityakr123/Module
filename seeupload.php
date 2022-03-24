@@ -50,6 +50,13 @@ while($row = mysqli_fetch_array($result)) {
 ?>
 
 <a href="upload.php"><button class="submit" >UPLOAD NEW</button></a>
+<a href="default.html"><button class="submit" >DEFAULT FORMATS</button></a>
+<footer style="background-color: black; color:white;text-align:center;height:80px;">
+            <span ><br><div class="logo"><h4>
+               COPYRIGHT @ADITYA KUMAR</h4>
+             </div>
+            </span>
+            </footer>
 </div>
 </body>
 </html>

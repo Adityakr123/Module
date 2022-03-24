@@ -23,7 +23,7 @@
            
            <!-- <li><a href="#">ABOUT US</a></li> -->
            <li><a href="register.php">Register</a></li>
-           <li><a class="active" href="login.html">Login</a></li>
+           <li><a  href="login.html">Login</a></li>
            <!-- <li><a href="#">Gallery</a></li>
            <li><a href="#">Feedback</a></li> -->
         </ul>
@@ -46,12 +46,12 @@
         
         <br>
         <br>
-        <!-- <footer style="background-color: black; color:white;text-align:center;height:80px;">
+        <footer style="background-color: black; color:white;text-align:center;height:80px;">
             <span ><br><div class="logo"><h4>
                COPYRIGHT @ADITYA KUMAR</h4>
              </div>
             </span>
-            </footer> -->
+            </footer>
     </div>
     
 </body>

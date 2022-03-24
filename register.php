@@ -150,12 +150,12 @@ if(isset($_POST["name"])){
         
         <br>
         <br>
-        <!-- <footer style="background-color: black; color:white;text-align:center;height:80px;">
+        <footer style="background-color: black; color:white;text-align:center;height:80px;">
             <span ><br><div class="logo"><h4>
                COPYRIGHT @ADITYA KUMAR</h4>
              </div>
             </span>
-            </footer> -->
+            </footer>
       </div>
 
    </body>
